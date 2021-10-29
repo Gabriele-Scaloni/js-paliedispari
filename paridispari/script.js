@@ -12,23 +12,30 @@ document.getElementById("stampaUtente").innerHTML=`hai scelto il n ${numUtente}`
 numPc = Math.round(Math.random() * 4 +1);
 document.getElementById("stampaPc").innerHTML=`il Pc ha generato il n ${numPc}`;
 
-function sommaNumeri (numUtente, numPc){
-    let risultato = numUtente + numPc;
-    return risultato;
-     
-}  
-
-const somma = sommaNumeri(numUtente, numPc)
+const somma =  numUtente + numPc;
 
 console.log(somma);
 
+if (verificaNumero(somma) == pariOdispari) {
+    document.getElementById("stamparisultato").innerHTML=`hai vinto`;
+} else {
+    document.getElementById("stamparisultato").innerHTML=`hai perso`;
+}
 
-if (somma % 2 == 0)
-{
-    document.getElementById("stamparisultato").innerHTML=` il risultato é pari,    
-    ${numUtente} + ${numPc} = ${somma}`;
+function verificaNumero(num) {
+
+    if (num % 2 == 0) {
+        return "pari";
+    }
+
+    return "dispari";
 }
-else
-{
-    document.getElementById("stamparisultato").innerHTML=`l risultato é dispari, ${numUtente} + ${numPc} = ${somma}`;
-}
+
+//  if (somma % 2 == 0)
+// {
+//     document.getElementById("stamparisultato").innerHTML=` il risultato é pari, ${numUtente} + ${numPc} = ${somma}`;
+// }
+// else
+// {
+//     document.getElementById("stamparisultato").innerHTML=`l risultato é dispari, ${numUtente} + ${numPc} = ${somma}`;
+// } 
